@@ -9,13 +9,15 @@ Amit Balki
 ---
 **Introduction:**
 
-The aim of the project is to develope a android application to detect electronic/electrical devices and to provide a means to turn on/off them. The devices considered in this project are tube-light, bulb, desktop, fan. The app uses realtime database provided by Firebase.
+The aim of the project is to develope a android application to detect electronic/electrical devices and to provide a means to turn on/off them. The devices considered in this project are tube-light, bulb, desktop, fan. Datasets for bulb and desktop were taken from image-net. The app uses realtime database provided by Firebase.
 
 ---
 **Tools Used:**
 
 python3
+
 Tensorflow 1.12.0
+
 Android Studios 3.3
 
 ---
@@ -34,13 +36,13 @@ pip install --upgrade "tensorflow==1.12.*"
 pip install PILLOW
 ```
 
-#### 3. Clone tensorflow-for-poets-2
+#### 3. Clone git repository
 
 ```git clone https://github.com/amitBalki/AR-IOT-Home-Automation.git```
 
 #### 4. Download Dataset(Or make your own)
 
-You can download flower dataset provided or you can create your own. If you are creating your own dataset make sure to properly label each folder with appropriate class name and each file must have correct extension.
+You can download flower dataset provided by tensorflow or you can create your own. If you are creating your own dataset make sure to properly label each folder with appropriate class name and each file must have correct extension. 
 
 ```
 curl http://download.tensorflow.org/example_images/flower_photos.tgz \
