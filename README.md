@@ -67,6 +67,8 @@ tensorboard --logdir tf_files/training_summaries &
 
 #### 7. Training 
 
+Change flower_photos to name of your dataset directory. Default value number of iterations is 4000.
+
 ```
 	python -m scripts.retrain \
 	  --bottleneck_dir=tf_files/bottlenecks \
@@ -82,7 +84,7 @@ tensorboard --logdir tf_files/training_summaries &
 #### 8. Conver model to TFlite format:- 
 	
   ```
-  IMAGE_SIZE=224
+  	IMAGE_SIZE=224
 	tflite_convert \
 	  --graph_def_file=tf_files/retrained_graph.pb \
 	  --output_file=tf_files/optimized_graph.lite \
