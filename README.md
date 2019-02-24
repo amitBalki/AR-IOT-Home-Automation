@@ -9,7 +9,7 @@ Amit Balki
 ---
 **Introduction:**
 
-The aim of the project is to develope a android application to detect electronic/electrical devices and to provide a means to turn on/off them. The devices considered in this project are tube-light, bulb, desktop, fan. Datasets for bulb and desktop were taken from image-net. The app uses realtime database provided by Firebase.
+The aim of the project is to develope a android application to detect electronic/electrical devices and to provide a means to turn them on/off. The devices considered in this project are tube-light, bulb, desktop, fan. Datasets for bulb and desktop were taken from image-net. The app uses realtime database provided by Firebase.
 
 ---
 **Tools Used:**
