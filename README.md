@@ -1,1 +1,97 @@
-# Overview
+# AR-IOT Home Automation
+
+**Team:3.3
+
+Rohan Bhagwatkar
+Amit Balki
+
+---
+**Introduction:**
+
+The aim of the project is to develope a android application to detect electronic/electrical devices and to provide a means to turn on/off them. The devices considered in this project are tube-light, bulb, desktop, fan. The app uses realtime database provided by Firebase.
+
+---
+**Tools Used:**
+
+python3
+Tensorflow 1.12.0
+Android Studios 3.3
+
+---
+**Setup**
+
+#### 1. Create a virtual environment(optional)
+```
+	mkvirtualenv android
+	workon android
+```
+
+#### 2. Install tensorflow and PILLOW
+
+```
+pip install --upgrade "tensorflow==1.12.*"
+pip install PILLOW
+```
+
+#### 3. Clone tensorflow-for-poets-2
+
+```git clone https://github.com/amitBalki/AR-IOT-Home-Automation.git```
+
+#### 4. Download Dataset(Or make your own)
+
+You can download flower dataset provided or you can create your own. If you are creating your own dataset make sure to properly label each folder with appropriate class name and each file must have correct extension.
+
+```
+curl http://download.tensorflow.org/example_images/flower_photos.tgz \
+    	| tar xz -C tf_files
+```
+
+#### 5. Set shell Variable
+	
+ ```
+  IMAGE_SIZE=224
+	ARCHITECTURE="mobilenet_0.50_${IMAGE_SIZE}"
+	set | grep IMAGE_SIZE
+  set | grep ARCHITECTURE
+ ```
+ 
+#### 6. Start TensorBoard
+
+Start tensorboard in another terminal.
+```
+tensorboard --logdir tf_files/training_summaries &
+``` 
+
+#### 7. Training 
+
+```
+	python -m scripts.retrain \
+	  --bottleneck_dir=tf_files/bottlenecks \
+	  --how_many_training_steps=500 \
+	  --model_dir=tf_files/models/ \
+  	  --summaries_dir=tf_files/training_summaries/"${ARCHITECTURE}" \
+  	  --output_graph=tf_files/retrained_graph.pb \
+  	  --output_labels=tf_files/retrained_labels.txt \
+  	  --architecture="${ARCHITECTURE}" \
+  	  --image_dir=tf_files/flower_photos
+```
+
+#### 8. Conver model to TFlite format:- 
+	
+  ```
+  IMAGE_SIZE=224
+	tflite_convert \
+	  --graph_def_file=tf_files/retrained_graph.pb \
+	  --output_file=tf_files/optimized_graph.lite \
+	  --input_format=TENSORFLOW_GRAPHDEF \
+	  --output_format=TFLITE \
+	  --input_shape=1,${IMAGE_SIZE},${IMAGE_SIZE},3 \
+	  --input_array=input \
+	  --output_array=final_result \
+	  --inference_type=FLOAT \
+	  --input_data_type=FLOAT
+```
+
+####  9. Open Android Studios:- 
+
+Open existing project in location: AR-IOT-Home-Automation/android/tflite
