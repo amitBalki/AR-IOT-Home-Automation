@@ -42,7 +42,7 @@ pip install PILLOW
 
 #### 4. Download Dataset(Or make your own)
 
-You can download flower dataset provided by tensorflow or you can create your own. If you are creating your own dataset make sure to properly label each folder with appropriate class name and each file must have correct extension. 
+You can download flower dataset provided by tensorflow or you can create your own. If you are creating your own dataset make sure to properly label each folder with appropriate class name and each file must have correct extension. Copy the foder containing your dataset folders to ```AR-IOT-Home-Automation/tf_files```
 
 ```
 curl http://download.tensorflow.org/example_images/flower_photos.tgz \
@@ -53,8 +53,8 @@ curl http://download.tensorflow.org/example_images/flower_photos.tgz \
 	
  ```
   IMAGE_SIZE=224
-	ARCHITECTURE="mobilenet_0.50_${IMAGE_SIZE}"
-	set | grep IMAGE_SIZE
+  ARCHITECTURE="mobilenet_0.50_${IMAGE_SIZE}"
+  set | grep IMAGE_SIZE
   set | grep ARCHITECTURE
  ```
  
@@ -98,3 +98,9 @@ tensorboard --logdir tf_files/training_summaries &
 ####  9. Open Android Studios:- 
 
 Open existing project in location: AR-IOT-Home-Automation/android/tflite
+
+---
+**Reference**
+
+1. [TensorFlow for Poets](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/index.html#0)
+2. [TensorFlow for Poets 2](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets-2-tflite/#2)
