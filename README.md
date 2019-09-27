@@ -1,11 +1,5 @@
 # AR-IOT Home Automation
 
-**Team:**
-
-Rohan Bhagwatkar
-
-Amit Balki
-
 ---
 **Introduction:**
 
