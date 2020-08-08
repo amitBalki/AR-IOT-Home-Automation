@@ -1,4 +1,4 @@
-# AR-IOT Home Automation
+# ML-IOT Home Automation
 
 ---
 **Introduction:**
@@ -14,6 +14,12 @@ Tensorflow 1.12.0
 
 Android Studios 3.3
 
+---
+
+**Flowchart**
+<p align="center">
+  <img src="flowchart.png">
+</p>
 ---
 **Setup**
 
