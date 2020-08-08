@@ -20,7 +20,9 @@ Android Studios 3.3
 <p align="center">
   <img src="flowchart.png">
 </p>
+
 ---
+
 **Setup**
 
 #### 1. Create a virtual environment(optional)
